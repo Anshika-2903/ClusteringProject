@@ -68,10 +68,5 @@ Initial visualization of the data was performed by plotting `Latitude` vs. `Long
 - HDBSCAN effectively identified noise points, providing high-quality clusters for well-structured data.
 - K-Means and GMM offered flexibility with hyperparameter tuning, showing competitive performance with silhouette scores.
 - Hierarchical Clustering provided valuable insights into data relationships through dendrograms.
-- Each algorithm demonstrated strengths in different aspects, making them suitable for varied clustering requirements.
 
-## Future Improvements
-1. Experiment with dimensionality reduction techniques (e.g., PCA, t-SNE) to improve visualization and clustering efficiency.
-2. Explore alternative metrics like Davies-Bouldin Index and Calinski-Harabasz Score for a holistic evaluation.
-3. Implement parallelization to reduce computation time during hyperparameter tuning.
-
+  The 
