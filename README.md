@@ -52,26 +52,19 @@ Initial visualization of the data was performed by plotting `Latitude` vs. `Long
 
 ## Results
 1. **HDBSCAN**:
-   - Best Parameters: `min_samples={best_params['min_samples']}`, `min_cluster_size={best_params['min_cluster_size']}`.
-   - Silhouette Score (without noise): {silhouette_hdbscan}
+   - Best Parameters: min_samples=15, min_cluster_size=15.
+   - Silhouette Score (without noise): 0.7865398612961981
 2. **K-Means**:
-   - Best Parameters: `k={best_k}`, `random_state={best_random_state}`.
-   - Silhouette Score: {best_score}
+   - Best Parameters: k= 48.
+   - Silhouette Score:  0.6076051848547132
 3. **Gaussian Mixture Model**:
-   - Best Parameters: `n_components={best_n_components}`, `covariance_type={best_covariance_type}`.
-   - Silhouette Score: {final_silhouette_score}
+   - Best Parameters: n_components=8, covariance_type='tied'.
+   - Silhouette Score: 0.5456663284634081
 4. **Hierarchical Clustering**:
-   - Best Parameters: `n_clusters={best_n_clusters}`, `linkage={best_linkage}`.
-   - Silhouette Score: {best_score}
+   - Best Parameters: n_clusters=49, linkage='ward'.
+   - Silhouette Score: 0.5913520622518538
 
-## Conclusions
-- HDBSCAN effectively identified noise points, providing high-quality clusters for well-structured data.
-- K-Means and GMM offered flexibility with hyperparameter tuning, showing competitive performance with silhouette scores.
-- Hierarchical Clustering provided valuable insights into data relationships through dendrograms.
-
-**Results**
-1. HDBSCAN gives silhouette score of 0.7865398612961981, Parameters: {'min_samples': 15, 'min_cluster_size': 15}
-but there are a lot of points classified as noise.
-2. K-Means Score: 0.6076051848547132, Optimal K: 48, the points are classified in good clusters by this algorithm.
-3. GMM Score: 0.5456663284634081, Parameters: (8, 'tied')
-4. Hierarchical Score: 0.5913520622518538, Parameters: (49, 'ward')
+**Overall Insights:**
+HDBSCAN emerged as the most robust clustering method, particularly excelling in handling noise and irregularly shaped clusters.
+K-Means offered a balance of simplicity and performance but struggled with noise and required manual selection of the number of clusters.
+GMM and Hierarchical Clustering provided alternative clustering perspectives, with GMM focusing on probabilistic assignments and Hierarchical Clustering emphasizing data hierarchy. While their silhouette scores were lower, these methods may still be valuable for specific use cases or exploratory analysis.
