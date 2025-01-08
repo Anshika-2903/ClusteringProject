@@ -1,3 +1,2 @@
-# Install required libraries
-import os
-os.system("pip install pandas numpy matplotlib hdbscan seaborn")
+# requirements.py
+!pip install pandas numpy matplotlib seaborn hdbscan scikit-learn
