@@ -69,4 +69,9 @@ Initial visualization of the data was performed by plotting `Latitude` vs. `Long
 - K-Means and GMM offered flexibility with hyperparameter tuning, showing competitive performance with silhouette scores.
 - Hierarchical Clustering provided valuable insights into data relationships through dendrograms.
 
-  The 
+**Results**
+1. HDBSCAN gives silhouette score of 0.7865398612961981, Parameters: {'min_samples': 15, 'min_cluster_size': 15}
+but there are a lot of points classified as noise.
+2. K-Means Score: 0.6076051848547132, Optimal K: 48, the points are classified in good clusters by this algorithm.
+3. GMM Score: 0.5456663284634081, Parameters: (8, 'tied')
+4. Hierarchical Score: 0.5913520622518538, Parameters: (49, 'ward')
