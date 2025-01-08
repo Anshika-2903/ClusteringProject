@@ -1,27 +1,20 @@
+# data_clean.py
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-def load_and_clean_data(filepath, delimiter=';'):
-    # Load data
-    data = pd.read_csv(filepath, delimiter=delimiter)
+def load_and_preprocess_data(file_path):
+    # Load the dataset
+    data = pd.read_csv(file_path, delimiter=';')
 
-    # Drop duplicates
+    # Data Cleaning
     data = data.drop_duplicates()
-
-    # Strip column names
     data.columns = data.columns.str.strip()
-
-    # Replace missing values with the mean of each column
     data['Latitude'].fillna(data['Latitude'].mean(), inplace=True)
     data['Longitude'].fillna(data['Longitude'].mean(), inplace=True)
-
-    # Reset index
     data = data.reset_index(drop=True)
 
-    return data
-
-def scale_data(data):
-    # Initialize the scaler
+    # Data Scaling
     scaler = StandardScaler()
     data_scaled = scaler.fit_transform(data)
-    return data_scaled
+
+    return data, data_scaled
