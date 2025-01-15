@@ -1,11 +1,6 @@
-from data_clean import load_and_clean_data
-from hdbscan_cluster import hdbscan_clustering
-from kmeans_cluster import kmeans_clustering
-from gmm_cluster import gmm_clustering
-from hierarchical_cluster import hierarchical_clustering
 
 if __name__ == "__main__":
-    data, data_scaled = load_and_clean_data("ML Assignment Dataset.csv")
+    data, data_scaled = load_and_preprocess_data("ML Assignment Dataset.csv")
 
     print("Running HDBSCAN...")
     hdbscan_score, hdbscan_params = hdbscan_clustering(data_scaled)
