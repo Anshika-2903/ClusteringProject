@@ -1,6 +1,4 @@
 # data_clean.py
-import pandas as pd
-from sklearn.preprocessing import StandardScaler
 
 def load_and_preprocess_data(file_path):
     # Load the dataset
