@@ -1,6 +1,3 @@
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-import matplotlib.pyplot as plt
 
 def kmeans_clustering(data_scaled):
     best_score = -1
@@ -24,7 +21,7 @@ def kmeans_clustering(data_scaled):
     plt.title(f"K-Means Clustering with k={best_k}")
     plt.xlabel("Longitude")
     plt.ylabel("Latitude")
-    plt.savefig("plots/kmeans_clusters.png")
+  
     plt.show()
 
     return best_score, best_k
