@@ -1,7 +1,4 @@
-import hdbscan
-from sklearn.metrics import silhouette_score
-import matplotlib.pyplot as plt
-import numpy as np
+
 
 def hdbscan_clustering(data_scaled):
     best_score = -1
@@ -35,7 +32,7 @@ def hdbscan_clustering(data_scaled):
     plt.xlabel("Longitude")
     plt.ylabel("Latitude")
     plt.legend()
-    plt.savefig("plots/hdbscan_clusters.png")
+    # plt.savefig("plots/hdbscan_clusters.png")
     plt.show()
 
     return best_score, best_params
